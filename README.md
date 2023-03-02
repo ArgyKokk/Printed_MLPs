@@ -2,11 +2,11 @@
 
 ### Methodology ###
 - Given a pre-trained MLP pruning, QAT and weight sharing is applied.
-- The pruning sparsity and the quantization level for the networks' inputs, weights and biases are found through a hw-aware DSE using the NSGA-II algorithm ([here]{https://pymoo.org/algorithms/moo/nsga2.html}).
+- The pruning sparsity and the quantization level for the networks' inputs, weights and biases are found through a hw-aware DSE using the NSGA-II algorithm (https://pymoo.org/algorithms/moo/nsga2.html).
 
 ### Structure ###
 
-* Six classification MLPs from the open-source UCI repository ([link]{https://archive.ics.uci.edu/ml/datasets.php}) are examined :
+* Six classification MLPs from the open-source UCI repository (https://archive.ics.uci.edu/ml/datasets.php) are examined :
 - Redwine
 - Whitewine
 - Pendigits
