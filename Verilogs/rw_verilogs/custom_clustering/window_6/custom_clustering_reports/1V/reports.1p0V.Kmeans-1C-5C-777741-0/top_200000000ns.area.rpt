@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: S-2021.06-SP2
+Date   : Thu Dec 15 10:18:05 2022
+****************************************
+
+Library(s) Used:
+
+    PPDK_Standard_Library_1.0V_25C_TYP_X1 (File: /home/akokkinis/synLibs/egfet/db/EGFET_1.0V.db)
+
+Number of ports:                           47
+Number of nets:                          1432
+Number of cells:                         1388
+Number of combinational cells:           1386
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                        480
+Number of references:                       7
+
+Combinational area:          495831769.000000
+Buf/Inv area:                109641600.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:             495831769.000000
+Total area:                 undefined
+1

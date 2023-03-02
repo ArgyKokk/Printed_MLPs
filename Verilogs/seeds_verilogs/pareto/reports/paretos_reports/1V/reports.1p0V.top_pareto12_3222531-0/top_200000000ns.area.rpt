@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: S-2021.06-SP2
+Date   : Sun Dec  4 23:05:46 2022
+****************************************
+
+Library(s) Used:
+
+    No libraries used.
+
+Number of ports:                           23
+Number of nets:                             1
+Number of cells:                            1
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       0
+
+Combinational area:                  0.000000
+Buf/Inv area:                        0.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                     0.000000
+Total area:                 undefined
+1

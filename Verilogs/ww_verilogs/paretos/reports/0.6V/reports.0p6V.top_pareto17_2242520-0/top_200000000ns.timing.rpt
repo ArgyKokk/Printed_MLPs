@@ -1,0 +1,84 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: S-2021.06-SP2
+Date   : Fri Dec  9 13:25:01 2022
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: inp[1] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  inp[1] (in)                             0.000      0.000 r
+  U74/Y (NAND2X1)                      2167689.000
+                                                  2167689.000 f
+  U116/Y (NAND2X1)                     615342.000 2783031.000 r
+  U92/Y (AND2X1)                       2539716.500
+                                                  5322747.500 r
+  U93/Y (INVX1)                        1299320.500
+                                                  6622068.000 f
+  U111/Y (XNOR2X1)                     8508332.000
+                                                  15130400.000 f
+  U110/Y (INVX1)                       -690788.000
+                                                  14439612.000 r
+  U107/Y (XNOR2X1)                     8144124.000
+                                                  22583736.000 r
+  U106/Y (INVX1)                       1437972.000
+                                                  24021708.000 f
+  U125/Y (NAND2X1)                     673774.000 24695482.000 r
+  U86/Y (AND2X1)                       2522410.000
+                                                  27217892.000 r
+  U87/Y (INVX1)                        1299320.000
+                                                  28517212.000 f
+  U95/Y (XNOR2X1)                      8734060.000
+                                                  37251272.000 f
+  U94/Y (INVX1)                        -662132.000
+                                                  36589140.000 r
+  U109/Y (XNOR2X1)                     8144140.000
+                                                  44733280.000 r
+  U108/Y (INVX1)                       1437976.000
+                                                  46171256.000 f
+  U96/Y (XNOR2X1)                      8739500.000
+                                                  54910756.000 f
+  U84/Y (AND2X1)                       3554120.000
+                                                  58464876.000 f
+  U85/Y (INVX1)                        -570016.000
+                                                  57894860.000 r
+  U146/Y (NAND2X1)                     2267840.000
+                                                  60162700.000 f
+  U80/Y (AND2X1)                       3544732.000
+                                                  63707432.000 f
+  U81/Y (INVX1)                        -571152.000
+                                                  63136280.000 r
+  U147/Y (NAND2X1)                     2263800.000
+                                                  65400080.000 f
+  U148/Y (NAND2X1)                     612784.000 66012864.000 r
+  out[0] (out)                            0.000   66012864.000 r
+  data arrival time                               66012864.000
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  -----------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -66012864.000
+  -----------------------------------------------------------
+  slack (MET)                                     133987136.000
+
+
+1

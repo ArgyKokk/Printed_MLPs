@@ -1,0 +1,15 @@
+****************************************
+Report : Averaged Power
+	-hierarchy
+Design : top
+Version: S-2021.06-SP1
+Date   : Fri Dec 16 14:18:41 2022
+****************************************
+
+
+
+                                      Int      Switch   Leak     Total
+Hierarchy                             Power    Power    Power    Power    %
+----------------------------------------------------------------------------------
+top                                   7.80e-04 5.12e-06 1.83e-02 1.90e-02 100.0
+1

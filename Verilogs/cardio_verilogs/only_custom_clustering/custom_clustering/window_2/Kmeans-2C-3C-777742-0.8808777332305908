@@ -1,0 +1,414 @@
+//weights: [[[-12, 64, -2, 55, 37, -14, -62, -49, 49, -52, 44, 30, 16, 4, 4, -4, 21, 20, 8, -62, 4], [64, -64, 55, -57, -4, 12, 62, 52, -56, 62, 1, 9, -12, 32, 0, -4, -4, 20, 8, 60, -18], [-12, -64, -2, 55, 37, 12, 62, 52, 49, -64, -17, 9, -37, 2, 4, 30, -36, -56, -64, 60, -18]], [[64, -64, -62], [-32, 64, -64], [-64, 62, 64]]]
+//intercepts: [[38, -5, 42], [54, -23, -64]]
+module top (inp, out);
+input [83:0] inp;
+output [1:0] out;
+
+// layer: 0 - neuron: 0
+    //weight abs(-12) : 4'b1100
+    wire [7:0] n_0_0_po_0;
+    assign n_0_0_po_0 = $unsigned(inp[3:0]) * $unsigned(4'b1100);
+
+    //weight 64 : 7'b1000000
+    wire [10:0] n_0_0_po_1;
+    assign n_0_0_po_1 = $unsigned(inp[7:4]) * $unsigned(7'b1000000);
+
+    //weight abs(-2) : 2'b10
+    wire [5:0] n_0_0_po_2;
+    assign n_0_0_po_2 = $unsigned(inp[11:8]) * $unsigned(2'b10);
+
+    //weight 55 : 6'b110111
+    wire [9:0] n_0_0_po_3;
+    assign n_0_0_po_3 = $unsigned(inp[15:12]) * $unsigned(6'b110111);
+
+    //weight 37 : 6'b100101
+    wire [9:0] n_0_0_po_4;
+    assign n_0_0_po_4 = $unsigned(inp[19:16]) * $unsigned(6'b100101);
+
+    //weight abs(-14) : 4'b1110
+    wire [7:0] n_0_0_po_5;
+    assign n_0_0_po_5 = $unsigned(inp[23:20]) * $unsigned(4'b1110);
+
+    //weight abs(-62) : 6'b111110
+    wire [9:0] n_0_0_po_6;
+    assign n_0_0_po_6 = $unsigned(inp[27:24]) * $unsigned(6'b111110);
+
+    //weight abs(-49) : 6'b110001
+    wire [9:0] n_0_0_po_7;
+    assign n_0_0_po_7 = $unsigned(inp[31:28]) * $unsigned(6'b110001);
+
+    //weight 49 : 6'b110001
+    wire [9:0] n_0_0_po_8;
+    assign n_0_0_po_8 = $unsigned(inp[35:32]) * $unsigned(6'b110001);
+
+    //weight abs(-52) : 6'b110100
+    wire [9:0] n_0_0_po_9;
+    assign n_0_0_po_9 = $unsigned(inp[39:36]) * $unsigned(6'b110100);
+
+    //weight 44 : 6'b101100
+    wire [9:0] n_0_0_po_10;
+    assign n_0_0_po_10 = $unsigned(inp[43:40]) * $unsigned(6'b101100);
+
+    //weight 30 : 5'b11110
+    wire [8:0] n_0_0_po_11;
+    assign n_0_0_po_11 = $unsigned(inp[47:44]) * $unsigned(5'b11110);
+
+    //weight 16 : 5'b10000
+    wire [8:0] n_0_0_po_12;
+    assign n_0_0_po_12 = $unsigned(inp[51:48]) * $unsigned(5'b10000);
+
+    //weight 4 : 3'b100
+    wire [6:0] n_0_0_po_13;
+    assign n_0_0_po_13 = $unsigned(inp[55:52]) * $unsigned(3'b100);
+
+    //weight 4 : 3'b100
+    wire [6:0] n_0_0_po_14;
+    assign n_0_0_po_14 = $unsigned(inp[59:56]) * $unsigned(3'b100);
+
+    //weight abs(-4) : 3'b100
+    wire [6:0] n_0_0_po_15;
+    assign n_0_0_po_15 = $unsigned(inp[63:60]) * $unsigned(3'b100);
+
+    //weight 21 : 5'b10101
+    wire [8:0] n_0_0_po_16;
+    assign n_0_0_po_16 = $unsigned(inp[67:64]) * $unsigned(5'b10101);
+
+    //weight 20 : 5'b10100
+    wire [8:0] n_0_0_po_17;
+    assign n_0_0_po_17 = $unsigned(inp[71:68]) * $unsigned(5'b10100);
+
+    //weight 8 : 4'b1000
+    wire [7:0] n_0_0_po_18;
+    assign n_0_0_po_18 = $unsigned(inp[75:72]) * $unsigned(4'b1000);
+
+    //weight abs(-62) : 6'b111110
+    wire [9:0] n_0_0_po_19;
+    assign n_0_0_po_19 = $unsigned(inp[79:76]) * $unsigned(6'b111110);
+
+    //weight 4 : 3'b100
+    wire [6:0] n_0_0_po_20;
+    assign n_0_0_po_20 = $unsigned(inp[83:80]) * $unsigned(3'b100);
+
+    //accumulate positive/negative subproducts
+    wire [13:0] n_0_0_sum_pos;
+    assign n_0_0_sum_pos = 10'b1001100000 + n_0_0_po_1 + n_0_0_po_3 + n_0_0_po_4 + n_0_0_po_8 + n_0_0_po_10 + n_0_0_po_11 + n_0_0_po_12 + n_0_0_po_13 + n_0_0_po_14 + n_0_0_po_16 + n_0_0_po_17 + n_0_0_po_18 + n_0_0_po_20;
+    wire [13:0] n_0_0_sum_neg;
+    assign n_0_0_sum_neg = n_0_0_po_0 + n_0_0_po_2 + n_0_0_po_5 + n_0_0_po_6 + n_0_0_po_7 + n_0_0_po_9 + n_0_0_po_15 + n_0_0_po_19;
+    wire signed [14:0] n_0_0_sum;
+    assign n_0_0_sum = $signed({1'b0,n_0_0_sum_pos}) - $signed({1'b0,n_0_0_sum_neg});
+
+    //relu
+    wire [7:0] n_0_0, n_0_0_qrelu;
+    DW01_satrnd #(14, 10, 3) USR_n_0_0 ( .din(n_0_0_sum[13:0]), .tc(1'b0), .rnd(1'b0), .ov(), .sat(1'b1), .dout(n_0_0_qrelu));
+    assign n_0_0 = (n_0_0_sum<0) ? $unsigned({8{1'b0}}) : $unsigned(n_0_0_qrelu);
+
+// layer: 0 - neuron: 1
+    //weight 64 : 7'b1000000
+    wire [10:0] n_0_1_po_0;
+    assign n_0_1_po_0 = $unsigned(inp[3:0]) * $unsigned(7'b1000000);
+
+    //weight abs(-64) : 7'b1000000
+    wire [10:0] n_0_1_po_1;
+    //merging with node 0
+    assign n_0_1_po_1 = n_0_0_po_1;
+
+    //weight 55 : 6'b110111
+    wire [9:0] n_0_1_po_2;
+    assign n_0_1_po_2 = $unsigned(inp[11:8]) * $unsigned(6'b110111);
+
+    //weight abs(-57) : 6'b111001
+    wire [9:0] n_0_1_po_3;
+    assign n_0_1_po_3 = $unsigned(inp[15:12]) * $unsigned(6'b111001);
+
+    //weight abs(-4) : 3'b100
+    wire [6:0] n_0_1_po_4;
+    assign n_0_1_po_4 = $unsigned(inp[19:16]) * $unsigned(3'b100);
+
+    //weight 12 : 4'b1100
+    wire [7:0] n_0_1_po_5;
+    assign n_0_1_po_5 = $unsigned(inp[23:20]) * $unsigned(4'b1100);
+
+    //weight 62 : 6'b111110
+    wire [9:0] n_0_1_po_6;
+    //merging with node 0
+    assign n_0_1_po_6 = n_0_0_po_6;
+
+    //weight 52 : 6'b110100
+    wire [9:0] n_0_1_po_7;
+    assign n_0_1_po_7 = $unsigned(inp[31:28]) * $unsigned(6'b110100);
+
+    //weight abs(-56) : 6'b111000
+    wire [9:0] n_0_1_po_8;
+    assign n_0_1_po_8 = $unsigned(inp[35:32]) * $unsigned(6'b111000);
+
+    //weight 62 : 6'b111110
+    wire [9:0] n_0_1_po_9;
+    assign n_0_1_po_9 = $unsigned(inp[39:36]) * $unsigned(6'b111110);
+
+    //weight 1 : 1'b1
+    wire [4:0] n_0_1_po_10;
+    assign n_0_1_po_10 = $unsigned(inp[43:40]) * $unsigned(1'b1);
+
+    //weight 9 : 4'b1001
+    wire [7:0] n_0_1_po_11;
+    assign n_0_1_po_11 = $unsigned(inp[47:44]) * $unsigned(4'b1001);
+
+    //weight abs(-12) : 4'b1100
+    wire [7:0] n_0_1_po_12;
+    assign n_0_1_po_12 = $unsigned(inp[51:48]) * $unsigned(4'b1100);
+
+    //weight 32 : 6'b100000
+    wire [9:0] n_0_1_po_13;
+    assign n_0_1_po_13 = $unsigned(inp[55:52]) * $unsigned(6'b100000);
+
+    //weight 0 : skip
+    //weight abs(-4) : 3'b100
+    wire [6:0] n_0_1_po_15;
+    //merging with node 0
+    assign n_0_1_po_15 = n_0_0_po_15;
+
+    //weight abs(-4) : 3'b100
+    wire [6:0] n_0_1_po_16;
+    assign n_0_1_po_16 = $unsigned(inp[67:64]) * $unsigned(3'b100);
+
+    //weight 20 : 5'b10100
+    wire [8:0] n_0_1_po_17;
+    //merging with node 0
+    assign n_0_1_po_17 = n_0_0_po_17;
+
+    //weight 8 : 4'b1000
+    wire [7:0] n_0_1_po_18;
+    //merging with node 0
+    assign n_0_1_po_18 = n_0_0_po_18;
+
+    //weight 60 : 6'b111100
+    wire [9:0] n_0_1_po_19;
+    assign n_0_1_po_19 = $unsigned(inp[79:76]) * $unsigned(6'b111100);
+
+    //weight abs(-18) : 5'b10010
+    wire [8:0] n_0_1_po_20;
+    assign n_0_1_po_20 = $unsigned(inp[83:80]) * $unsigned(5'b10010);
+
+    //accumulate positive/negative subproducts
+    wire [13:0] n_0_1_sum_pos;
+    assign n_0_1_sum_pos = n_0_1_po_0 + n_0_1_po_2 + n_0_1_po_5 + n_0_1_po_6 + n_0_1_po_7 + n_0_1_po_9 + n_0_1_po_10 + n_0_1_po_11 + n_0_1_po_13 + n_0_1_po_17 + n_0_1_po_18 + n_0_1_po_19;
+    wire [13:0] n_0_1_sum_neg;
+    assign n_0_1_sum_neg = 7'b1010000 + n_0_1_po_1 + n_0_1_po_3 + n_0_1_po_4 + n_0_1_po_8 + n_0_1_po_12 + n_0_1_po_15 + n_0_1_po_16 + n_0_1_po_20;
+    wire signed [14:0] n_0_1_sum;
+    assign n_0_1_sum = $signed({1'b0,n_0_1_sum_pos}) - $signed({1'b0,n_0_1_sum_neg});
+
+    //relu
+    wire [7:0] n_0_1, n_0_1_qrelu;
+    DW01_satrnd #(14, 10, 3) USR_n_0_1 ( .din(n_0_1_sum[13:0]), .tc(1'b0), .rnd(1'b0), .ov(), .sat(1'b1), .dout(n_0_1_qrelu));
+    assign n_0_1 = (n_0_1_sum<0) ? $unsigned({8{1'b0}}) : $unsigned(n_0_1_qrelu);
+
+// layer: 0 - neuron: 2
+    //weight abs(-12) : 4'b1100
+    wire [7:0] n_0_2_po_0;
+    //merging with node 0
+    assign n_0_2_po_0 = n_0_0_po_0;
+
+    //weight abs(-64) : 7'b1000000
+    wire [10:0] n_0_2_po_1;
+    //merging with node 0
+    assign n_0_2_po_1 = n_0_0_po_1;
+
+    //weight abs(-2) : 2'b10
+    wire [5:0] n_0_2_po_2;
+    //merging with node 0
+    assign n_0_2_po_2 = n_0_0_po_2;
+
+    //weight 55 : 6'b110111
+    wire [9:0] n_0_2_po_3;
+    //merging with node 0
+    assign n_0_2_po_3 = n_0_0_po_3;
+
+    //weight 37 : 6'b100101
+    wire [9:0] n_0_2_po_4;
+    //merging with node 0
+    assign n_0_2_po_4 = n_0_0_po_4;
+
+    //weight 12 : 4'b1100
+    wire [7:0] n_0_2_po_5;
+    //merging with node 1
+    assign n_0_2_po_5 = n_0_1_po_5;
+
+    //weight 62 : 6'b111110
+    wire [9:0] n_0_2_po_6;
+    //merging with node 0
+    assign n_0_2_po_6 = n_0_0_po_6;
+
+    //weight 52 : 6'b110100
+    wire [9:0] n_0_2_po_7;
+    //merging with node 1
+    assign n_0_2_po_7 = n_0_1_po_7;
+
+    //weight 49 : 6'b110001
+    wire [9:0] n_0_2_po_8;
+    //merging with node 0
+    assign n_0_2_po_8 = n_0_0_po_8;
+
+    //weight abs(-64) : 7'b1000000
+    wire [10:0] n_0_2_po_9;
+    assign n_0_2_po_9 = $unsigned(inp[39:36]) * $unsigned(7'b1000000);
+
+    //weight abs(-17) : 5'b10001
+    wire [8:0] n_0_2_po_10;
+    assign n_0_2_po_10 = $unsigned(inp[43:40]) * $unsigned(5'b10001);
+
+    //weight 9 : 4'b1001
+    wire [7:0] n_0_2_po_11;
+    //merging with node 1
+    assign n_0_2_po_11 = n_0_1_po_11;
+
+    //weight abs(-37) : 6'b100101
+    wire [9:0] n_0_2_po_12;
+    assign n_0_2_po_12 = $unsigned(inp[51:48]) * $unsigned(6'b100101);
+
+    //weight 2 : 2'b10
+    wire [5:0] n_0_2_po_13;
+    assign n_0_2_po_13 = $unsigned(inp[55:52]) * $unsigned(2'b10);
+
+    //weight 4 : 3'b100
+    wire [6:0] n_0_2_po_14;
+    //merging with node 0
+    assign n_0_2_po_14 = n_0_0_po_14;
+
+    //weight 30 : 5'b11110
+    wire [8:0] n_0_2_po_15;
+    assign n_0_2_po_15 = $unsigned(inp[63:60]) * $unsigned(5'b11110);
+
+    //weight abs(-36) : 6'b100100
+    wire [9:0] n_0_2_po_16;
+    assign n_0_2_po_16 = $unsigned(inp[67:64]) * $unsigned(6'b100100);
+
+    //weight abs(-56) : 6'b111000
+    wire [9:0] n_0_2_po_17;
+    assign n_0_2_po_17 = $unsigned(inp[71:68]) * $unsigned(6'b111000);
+
+    //weight abs(-64) : 7'b1000000
+    wire [10:0] n_0_2_po_18;
+    assign n_0_2_po_18 = $unsigned(inp[75:72]) * $unsigned(7'b1000000);
+
+    //weight 60 : 6'b111100
+    wire [9:0] n_0_2_po_19;
+    //merging with node 1
+    assign n_0_2_po_19 = n_0_1_po_19;
+
+    //weight abs(-18) : 5'b10010
+    wire [8:0] n_0_2_po_20;
+    //merging with node 1
+    assign n_0_2_po_20 = n_0_1_po_20;
+
+    //accumulate positive/negative subproducts
+    wire [13:0] n_0_2_sum_pos;
+    assign n_0_2_sum_pos = 10'b1010100000 + n_0_2_po_3 + n_0_2_po_4 + n_0_2_po_5 + n_0_2_po_6 + n_0_2_po_7 + n_0_2_po_8 + n_0_2_po_11 + n_0_2_po_13 + n_0_2_po_14 + n_0_2_po_15 + n_0_2_po_19;
+    wire [13:0] n_0_2_sum_neg;
+    assign n_0_2_sum_neg = n_0_2_po_0 + n_0_2_po_1 + n_0_2_po_2 + n_0_2_po_9 + n_0_2_po_10 + n_0_2_po_12 + n_0_2_po_16 + n_0_2_po_17 + n_0_2_po_18 + n_0_2_po_20;
+    wire signed [14:0] n_0_2_sum;
+    assign n_0_2_sum = $signed({1'b0,n_0_2_sum_pos}) - $signed({1'b0,n_0_2_sum_neg});
+
+    //relu
+    wire [7:0] n_0_2, n_0_2_qrelu;
+    DW01_satrnd #(14, 10, 3) USR_n_0_2 ( .din(n_0_2_sum[13:0]), .tc(1'b0), .rnd(1'b0), .ov(), .sat(1'b1), .dout(n_0_2_qrelu));
+    assign n_0_2 = (n_0_2_sum<0) ? $unsigned({8{1'b0}}) : $unsigned(n_0_2_qrelu);
+
+// layer: 1 - neuron: 0
+    //weight 64 : 7'b1000000
+    wire [14:0] n_1_0_po_0;
+    assign n_1_0_po_0 = $unsigned(n_0_0) * $unsigned(7'b1000000);
+
+    //weight abs(-64) : 7'b1000000
+    wire [14:0] n_1_0_po_1;
+    assign n_1_0_po_1 = $unsigned(n_0_1) * $unsigned(7'b1000000);
+
+    //weight abs(-62) : 6'b111110
+    wire [13:0] n_1_0_po_2;
+    assign n_1_0_po_2 = $unsigned(n_0_2) * $unsigned(6'b111110);
+
+    //accumulate positive/negative subproducts
+    wire [15:0] n_1_0_sum_pos;
+    assign n_1_0_sum_pos = 13'b1101100000000 + n_1_0_po_0;
+    wire [15:0] n_1_0_sum_neg;
+    assign n_1_0_sum_neg = n_1_0_po_1 + n_1_0_po_2;
+    wire signed [16:0] n_1_0_sum;
+    assign n_1_0_sum = $signed({1'b0,n_1_0_sum_pos}) - $signed({1'b0,n_1_0_sum_neg});
+
+    //linear
+    wire signed [16:0] n_1_0;
+    assign n_1_0 = n_1_0_sum;
+
+// layer: 1 - neuron: 1
+    //weight abs(-32) : 6'b100000
+    wire [13:0] n_1_1_po_0;
+    assign n_1_1_po_0 = $unsigned(n_0_0) * $unsigned(6'b100000);
+
+    //weight 64 : 7'b1000000
+    wire [14:0] n_1_1_po_1;
+    //merging with node 0
+    assign n_1_1_po_1 = n_1_0_po_1;
+
+    //weight abs(-64) : 7'b1000000
+    wire [14:0] n_1_1_po_2;
+    assign n_1_1_po_2 = $unsigned(n_0_2) * $unsigned(7'b1000000);
+
+    //accumulate positive/negative subproducts
+    wire [15:0] n_1_1_sum_pos;
+    assign n_1_1_sum_pos = n_1_1_po_1;
+    wire [15:0] n_1_1_sum_neg;
+    assign n_1_1_sum_neg = 12'b101110000000 + n_1_1_po_0 + n_1_1_po_2;
+    wire signed [16:0] n_1_1_sum;
+    assign n_1_1_sum = $signed({1'b0,n_1_1_sum_pos}) - $signed({1'b0,n_1_1_sum_neg});
+
+    //linear
+    wire signed [16:0] n_1_1;
+    assign n_1_1 = n_1_1_sum;
+
+// layer: 1 - neuron: 2
+    //weight abs(-64) : 7'b1000000
+    wire [14:0] n_1_2_po_0;
+    //merging with node 0
+    assign n_1_2_po_0 = n_1_0_po_0;
+
+    //weight 62 : 6'b111110
+    wire [13:0] n_1_2_po_1;
+    assign n_1_2_po_1 = $unsigned(n_0_1) * $unsigned(6'b111110);
+
+    //weight 64 : 7'b1000000
+    wire [14:0] n_1_2_po_2;
+    //merging with node 1
+    assign n_1_2_po_2 = n_1_1_po_2;
+
+    //accumulate positive/negative subproducts
+    wire [15:0] n_1_2_sum_pos;
+    assign n_1_2_sum_pos = n_1_2_po_1 + n_1_2_po_2;
+    wire [15:0] n_1_2_sum_neg;
+    assign n_1_2_sum_neg = 14'b10000000000000 + n_1_2_po_0;
+    wire signed [16:0] n_1_2_sum;
+    assign n_1_2_sum = $signed({1'b0,n_1_2_sum_pos}) - $signed({1'b0,n_1_2_sum_neg});
+
+    //linear
+    wire signed [16:0] n_1_2;
+    assign n_1_2 = n_1_2_sum;
+
+// argmax: 3 classes, need 2 bits
+// argmax inp: n_1_0, n_1_1, n_1_2
+    //comp level 0
+    wire cmp_0_0;
+    wire signed [16:0] argmax_val_0_0;
+    wire [1:0] argmax_idx_0_0;
+    assign {cmp_0_0} = ( n_1_0 >= n_1_1 );
+    assign {argmax_val_0_0} = ( cmp_0_0 ) ? n_1_0 : n_1_1;
+    assign {argmax_idx_0_0} = ( cmp_0_0 ) ? 2'b00 : 2'b01;
+
+    //comp level 1
+    wire cmp_1_0;
+    wire signed [16:0] argmax_val_1_0;
+    wire [1:0] argmax_idx_1_0;
+    assign {cmp_1_0} = ( argmax_val_0_0 >= n_1_2 );
+    assign {argmax_val_1_0} = ( cmp_1_0 ) ? argmax_val_0_0 : n_1_2;
+    assign {argmax_idx_1_0} = ( cmp_1_0 ) ? argmax_idx_0_0 : 2'b10;
+
+    assign out = argmax_idx_1_0;
+
+endmodule

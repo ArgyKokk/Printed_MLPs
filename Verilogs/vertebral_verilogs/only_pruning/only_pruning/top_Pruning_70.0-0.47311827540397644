@@ -1,0 +1,159 @@
+//weights: [[[99, 0, 0, 0, 0, -128], [0, -120, 0, 0, 0, 113], [0, 0, 0, 0, 0, 127]], [[94, 0, 0], [0, 0, 127], [0, 0, -104]]]
+//intercepts: [[79, -47, 76], [-128, -111, 46]]
+module top (inp, out);
+input [23:0] inp;
+output [1:0] out;
+
+// layer: 0 - neuron: 0
+    //weight 99 : 7'b1100011
+    wire [10:0] n_0_0_po_0;
+    assign n_0_0_po_0 = $unsigned(inp[3:0]) * $unsigned(7'b1100011);
+
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight abs(-128) : 8'b10000000
+    wire [11:0] n_0_0_po_5;
+    assign n_0_0_po_5 = $unsigned(inp[23:20]) * $unsigned(8'b10000000);
+
+    //accumulate positive/negative subproducts
+    wire [11:0] n_0_0_sum_pos;
+    assign n_0_0_sum_pos = 10'b1001111000 + n_0_0_po_0;
+    wire [11:0] n_0_0_sum_neg;
+    assign n_0_0_sum_neg = n_0_0_po_5;
+    wire signed [12:0] n_0_0_sum;
+    assign n_0_0_sum = $signed({1'b0,n_0_0_sum_pos}) - $signed({1'b0,n_0_0_sum_neg});
+
+    //relu
+    wire [9:0] n_0_0, n_0_0_qrelu;
+    DW01_satrnd #(12, 10, 1) USR_n_0_0 ( .din(n_0_0_sum[11:0]), .tc(1'b0), .rnd(1'b0), .ov(), .sat(1'b1), .dout(n_0_0_qrelu));
+    assign n_0_0 = (n_0_0_sum<0) ? $unsigned({10{1'b0}}) : $unsigned(n_0_0_qrelu);
+
+// layer: 0 - neuron: 1
+    //weight 0 : skip
+    //weight abs(-120) : 7'b1111000
+    wire [10:0] n_0_1_po_1;
+    assign n_0_1_po_1 = $unsigned(inp[7:4]) * $unsigned(7'b1111000);
+
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 113 : 7'b1110001
+    wire [10:0] n_0_1_po_5;
+    assign n_0_1_po_5 = $unsigned(inp[23:20]) * $unsigned(7'b1110001);
+
+    //accumulate positive/negative subproducts
+    wire [11:0] n_0_1_sum_pos;
+    assign n_0_1_sum_pos = n_0_1_po_5;
+    wire [11:0] n_0_1_sum_neg;
+    assign n_0_1_sum_neg = 9'b101111000 + n_0_1_po_1;
+    wire signed [12:0] n_0_1_sum;
+    assign n_0_1_sum = $signed({1'b0,n_0_1_sum_pos}) - $signed({1'b0,n_0_1_sum_neg});
+
+    //relu
+    wire [9:0] n_0_1, n_0_1_qrelu;
+    DW01_satrnd #(12, 10, 1) USR_n_0_1 ( .din(n_0_1_sum[11:0]), .tc(1'b0), .rnd(1'b0), .ov(), .sat(1'b1), .dout(n_0_1_qrelu));
+    assign n_0_1 = (n_0_1_sum<0) ? $unsigned({10{1'b0}}) : $unsigned(n_0_1_qrelu);
+
+// layer: 0 - neuron: 2
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 127 : 7'b1111111
+    wire [10:0] n_0_2_po_5;
+    assign n_0_2_po_5 = $unsigned(inp[23:20]) * $unsigned(7'b1111111);
+
+    //accumulate positive/negative subproducts
+    wire [11:0] n_0_2_sum_pos;
+    assign n_0_2_sum_pos = 10'b1001100000 + n_0_2_po_5;
+
+    //WARN: only positive weights. Using identity
+    wire signed [12:0] n_0_2_sum;
+    assign n_0_2_sum = $signed({1'b0,n_0_2_sum_pos});
+
+    //relu
+    wire [9:0] n_0_2, n_0_2_qrelu;
+    DW01_satrnd #(12, 10, 1) USR_n_0_2 ( .din(n_0_2_sum[11:0]), .tc(1'b0), .rnd(1'b0), .ov(), .sat(1'b1), .dout(n_0_2_qrelu));
+    assign n_0_2 = (n_0_2_sum<0) ? $unsigned({10{1'b0}}) : $unsigned(n_0_2_qrelu);
+
+// layer: 1 - neuron: 0
+    //weight 94 : 7'b1011110
+    wire [16:0] n_1_0_po_0;
+    assign n_1_0_po_0 = $unsigned(n_0_0) * $unsigned(7'b1011110);
+
+    //weight 0 : skip
+    //weight 0 : skip
+    //accumulate positive/negative subproducts
+    wire [16:0] n_1_0_sum_pos;
+    assign n_1_0_sum_pos = n_1_0_po_0;
+    wire [16:0] n_1_0_sum_neg;
+    assign n_1_0_sum_neg = 15'b100000000000000;
+    wire signed [17:0] n_1_0_sum;
+    assign n_1_0_sum = $signed({1'b0,n_1_0_sum_pos}) - $signed({1'b0,n_1_0_sum_neg});
+
+    //linear
+    wire signed [17:0] n_1_0;
+    assign n_1_0 = n_1_0_sum;
+
+// layer: 1 - neuron: 1
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight 127 : 7'b1111111
+    wire [16:0] n_1_1_po_2;
+    assign n_1_1_po_2 = $unsigned(n_0_2) * $unsigned(7'b1111111);
+
+    //accumulate positive/negative subproducts
+    wire [16:0] n_1_1_sum_pos;
+    assign n_1_1_sum_pos = n_1_1_po_2;
+    wire [16:0] n_1_1_sum_neg;
+    assign n_1_1_sum_neg = 14'b11011110000000;
+    wire signed [17:0] n_1_1_sum;
+    assign n_1_1_sum = $signed({1'b0,n_1_1_sum_pos}) - $signed({1'b0,n_1_1_sum_neg});
+
+    //linear
+    wire signed [17:0] n_1_1;
+    assign n_1_1 = n_1_1_sum;
+
+// layer: 1 - neuron: 2
+    //weight 0 : skip
+    //weight 0 : skip
+    //weight abs(-104) : 7'b1101000
+    wire [16:0] n_1_2_po_2;
+    assign n_1_2_po_2 = $unsigned(n_0_2) * $unsigned(7'b1101000);
+
+    //accumulate positive/negative subproducts
+    wire [16:0] n_1_2_sum_pos;
+    assign n_1_2_sum_pos = 13'b1011100000000;
+    wire [16:0] n_1_2_sum_neg;
+    assign n_1_2_sum_neg = n_1_2_po_2;
+    wire signed [17:0] n_1_2_sum;
+    assign n_1_2_sum = $signed({1'b0,n_1_2_sum_pos}) - $signed({1'b0,n_1_2_sum_neg});
+
+    //linear
+    wire signed [17:0] n_1_2;
+    assign n_1_2 = n_1_2_sum;
+
+// argmax: 3 classes, need 2 bits
+// argmax inp: n_1_0, n_1_1, n_1_2
+    //comp level 0
+    wire cmp_0_0;
+    wire signed [17:0] argmax_val_0_0;
+    wire [1:0] argmax_idx_0_0;
+    assign {cmp_0_0} = ( n_1_0 >= n_1_1 );
+    assign {argmax_val_0_0} = ( cmp_0_0 ) ? n_1_0 : n_1_1;
+    assign {argmax_idx_0_0} = ( cmp_0_0 ) ? 2'b00 : 2'b01;
+
+    //comp level 1
+    wire cmp_1_0;
+    wire signed [17:0] argmax_val_1_0;
+    wire [1:0] argmax_idx_1_0;
+    assign {cmp_1_0} = ( argmax_val_0_0 >= n_1_2 );
+    assign {argmax_val_1_0} = ( cmp_1_0 ) ? argmax_val_0_0 : n_1_2;
+    assign {argmax_idx_1_0} = ( cmp_1_0 ) ? argmax_idx_0_0 : 2'b10;
+
+    assign out = argmax_idx_1_0;
+
+endmodule

@@ -1,0 +1,49 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : top
+Version: S-2021.06-SP1
+Date   : Sat Dec  3 11:48:21 2022
+****************************************
+
+
+  Startpoint: inp[13] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  inp[13] (in)                            0.000      0.000 f
+  U76/Y (OR2X1)                        3146744.500
+                                                  3146744.500 f
+  U77/Y (NOR2X1)                       1406008.500
+                                                  4552753.000 r
+  U79/Y (NAND2X1)                      1473034.500
+                                                  6025787.500 f
+  U80/Y (NAND2X1)                      619830.000 6645617.500 r
+  U83/Y (NAND2X1)                      1480058.500
+                                                  8125676.000 f
+  out[0] (out)                            0.000   8125676.000 f
+  data arrival time                               8125676.000
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  clock reconvergence pessimism           0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  ---------------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -8125676.000
+  ---------------------------------------------------------------
+  slack (MET)                                     191874320.000
+
+
+1

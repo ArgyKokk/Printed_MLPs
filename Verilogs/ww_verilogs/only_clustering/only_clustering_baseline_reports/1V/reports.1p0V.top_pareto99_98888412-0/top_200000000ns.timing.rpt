@@ -1,0 +1,16 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: S-2021.06-SP2
+Date   : Wed Sep 14 10:59:58 2022
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_1.0V_25C_TYP_X1
+Wire Load Model Mode: top
+No paths.
+
+1

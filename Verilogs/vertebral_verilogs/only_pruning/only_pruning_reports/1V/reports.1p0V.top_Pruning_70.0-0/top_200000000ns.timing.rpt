@@ -1,0 +1,79 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: S-2021.06-SP2
+Date   : Sat Dec  3 11:28:33 2022
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_1.0V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: inp[2] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  inp[2] (in)                             0.000      0.000 f
+  U71/Y (AND2X1)                       2461290.500
+                                                  2461290.500 f
+  U72/Y (INVX1)                        -1162527.625
+                                                  1298762.875 r
+  U78/Y (AND2X1)                       2201473.000
+                                                  3500236.000 r
+  U89/Y (NAND2X1)                      834831.500 4335067.500 f
+  U63/Y (AND2X1)                       2043603.500
+                                                  6378671.000 f
+  U64/Y (INVX1)                        -1272872.000
+                                                  5105799.000 r
+  U50/Y (AND2X1)                       2198907.500
+                                                  7304706.500 r
+  U73/Y (INVX1)                        708305.000 8013011.500 f
+  U95/Y (XOR2X1)                       4911014.500
+                                                  12924026.000 r
+  U74/Y (AND2X1)                       1817000.000
+                                                  14741026.000 r
+  U75/Y (INVX1)                        708782.000 15449808.000 f
+  U96/Y (AND2X1)                       2238236.000
+                                                  17688044.000 f
+  U97/Y (NAND2X1)                      864408.000 18552452.000 r
+  U51/Y (AND2X1)                       1819196.000
+                                                  20371648.000 r
+  U52/Y (INVX1)                        707780.000 21079428.000 f
+  U80/Y (AND2X1)                       2034876.000
+                                                  23114304.000 f
+  U81/Y (INVX1)                        -1175038.000
+                                                  21939266.000 r
+  U98/Y (NOR2X1)                       548792.000 22488058.000 f
+  U99/Y (OR2X1)                        2095724.000
+                                                  24583782.000 f
+  U100/Y (NAND2X1)                     870722.000 25454504.000 r
+  U57/Y (AND2X1)                       1818748.000
+                                                  27273252.000 r
+  U58/Y (INVX1)                        715556.000 27988808.000 f
+  U103/Y (NAND2X1)                     1279664.000
+                                                  29268472.000 r
+  out[0] (out)                            0.000   29268472.000 r
+  data arrival time                               29268472.000
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  -----------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -29268472.000
+  -----------------------------------------------------------
+  slack (MET)                                     170731520.000
+
+
+1

@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: S-2021.06-SP2
+Date   : Sat Dec  3 11:38:19 2022
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_1.0V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: inp[7] (input port clocked by clk)
+  Endpoint: out[1] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  inp[7] (in)                             0.000      0.000 f
+  U45/Y (NOR2X1)                       1156711.125
+                                                  1156711.125 r
+  U43/Y (AND2X1)                       2183886.000
+                                                  3340597.000 r
+  U44/Y (INVX1)                        712530.750 4053127.750 f
+  U47/Y (AND2X1)                       1862551.750
+                                                  5915679.500 f
+  out[1] (out)                            0.000   5915679.500 f
+  data arrival time                               5915679.500
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  -----------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -5915679.500
+  -----------------------------------------------------------
+  slack (MET)                                     194084320.000
+
+
+1

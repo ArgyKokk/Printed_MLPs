@@ -1,0 +1,51 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: S-2021.06-SP2
+Date   : Sat Dec  3 11:40:02 2022
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: inp[14] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  inp[14] (in)                            0.000      0.000 f
+  U85/Y (NOR2X1)                       1421152.250
+                                                  1421152.250 r
+  U91/Y (INVX1)                        1208674.000
+                                                  2629826.250 f
+  U92/Y (NOR2X1)                       960341.750 3590168.000 r
+  U94/Y (NAND2X1)                      2546940.000
+                                                  6137108.000 f
+  U95/Y (NAND2X1)                      627431.000 6764539.000 r
+  U96/Y (NAND2X1)                      1480058.500
+                                                  8244597.500 f
+  out[0] (out)                            0.000   8244597.500 f
+  data arrival time                               8244597.500
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  -----------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -8244597.500
+  -----------------------------------------------------------
+  slack (MET)                                     191755408.000
+
+
+1

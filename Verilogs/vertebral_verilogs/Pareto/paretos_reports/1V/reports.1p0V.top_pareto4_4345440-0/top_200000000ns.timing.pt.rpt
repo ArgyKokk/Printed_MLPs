@@ -1,0 +1,57 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : top
+Version: S-2021.06-SP1
+Date   : Sat Dec  3 11:47:17 2022
+****************************************
+
+
+  Startpoint: inp[14] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  inp[14] (in)                            0.000      0.000 f
+  U62/Y (OR2X1)                        2318550.000
+                                                  2318550.000 f
+  U51/Y (NOR2X1)                       1215314.000
+                                                  3533864.000 r
+  U58/Y (AND2X1)                       1834656.000
+                                                  5368520.000 r
+  U59/Y (INVX1)                        707719.500 6076239.500 f
+  U73/Y (NAND2X1)                      918850.500 6995090.000 r
+  U56/Y (AND2X1)                       1819202.000
+                                                  8814292.000 r
+  U57/Y (INVX1)                        707782.000 9522074.000 f
+  U64/Y (AND2X1)                       2034875.000
+                                                  11556949.000 f
+  U65/Y (INVX1)                        -1187278.000
+                                                  10369671.000 r
+  U74/Y (NAND2X1)                      1047834.000
+                                                  11417505.000 f
+  out[0] (out)                            0.000   11417505.000 f
+  data arrival time                               11417505.000
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  clock reconvergence pessimism           0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  ---------------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -11417505.000
+  ---------------------------------------------------------------
+  slack (MET)                                     188582496.000
+
+
+1

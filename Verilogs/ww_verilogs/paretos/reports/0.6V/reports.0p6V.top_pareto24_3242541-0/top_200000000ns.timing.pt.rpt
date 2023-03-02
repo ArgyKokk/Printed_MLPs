@@ -1,0 +1,53 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : top
+Version: S-2021.06-SP1
+Date   : Fri Dec  9 13:29:33 2022
+****************************************
+
+
+  Startpoint: inp[24] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  inp[24] (in)                            0.000      0.000 r
+  U39/Y (NAND2X1)                      2162597.000
+                                                  2162597.000 f
+  U49/Y (NOR2X1)                       979516.000 3142113.000 r
+  U50/Y (NAND2X1)                      1494643.500
+                                                  4636756.500 f
+  U40/Y (AND2X1)                       3546313.000
+                                                  8183069.500 f
+  U41/Y (INVX1)                        -572161.000
+                                                  7610908.500 r
+  U51/Y (NAND2X1)                      2263781.500
+                                                  9874690.000 f
+  U52/Y (AND2X1)                       2990117.000
+                                                  12864807.000 f
+  out[0] (out)                            0.000   12864807.000 f
+  data arrival time                               12864807.000
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  clock reconvergence pessimism           0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  ---------------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -12864807.000
+  ---------------------------------------------------------------
+  slack (MET)                                     187135200.000
+
+
+1

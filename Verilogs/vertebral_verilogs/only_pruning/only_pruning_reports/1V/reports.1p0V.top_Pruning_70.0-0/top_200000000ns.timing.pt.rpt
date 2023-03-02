@@ -1,0 +1,78 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : top
+Version: S-2021.06-SP1
+Date   : Sat Dec  3 11:28:38 2022
+****************************************
+
+
+  Startpoint: inp[2] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  inp[2] (in)                             0.000      0.000 f
+  U71/Y (AND2X1)                       2461290.000
+                                                  2461290.000 f
+  U72/Y (INVX1)                        -1162526.000
+                                                  1298764.000 r
+  U78/Y (AND2X1)                       2201492.000
+                                                  3500256.000 r
+  U89/Y (NAND2X1)                      834834.000 4335090.000 f
+  U63/Y (AND2X1)                       2043600.000
+                                                  6378690.000 f
+  U64/Y (INVX1)                        -1272892.000
+                                                  5105798.000 r
+  U50/Y (AND2X1)                       2198902.000
+                                                  7304700.000 r
+  U73/Y (INVX1)                        708306.000 8013006.000 f
+  U95/Y (XOR2X1)                       4911015.000
+                                                  12924021.000 r
+  U74/Y (AND2X1)                       1817006.000
+                                                  14741027.000 r
+  U75/Y (INVX1)                        708783.000 15449810.000 f
+  U96/Y (AND2X1)                       2238234.000
+                                                  17688044.000 f
+  U97/Y (NAND2X1)                      864400.000 18552444.000 r
+  U51/Y (AND2X1)                       1819204.000
+                                                  20371648.000 r
+  U52/Y (INVX1)                        707782.000 21079430.000 f
+  U80/Y (AND2X1)                       2034874.000
+                                                  23114304.000 f
+  U81/Y (INVX1)                        -1175040.000
+                                                  21939264.000 r
+  U98/Y (NOR2X1)                       548796.000 22488060.000 f
+  U99/Y (OR2X1)                        2095734.000
+                                                  24583794.000 f
+  U100/Y (NAND2X1)                     870714.000 25454508.000 r
+  U57/Y (AND2X1)                       1818754.000
+                                                  27273262.000 r
+  U58/Y (INVX1)                        715560.000 27988822.000 f
+  U103/Y (NAND2X1)                     1279664.000
+                                                  29268486.000 r
+  out[0] (out)                            0.000   29268486.000 r
+  data arrival time                               29268486.000
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  clock reconvergence pessimism           0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  ---------------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -29268486.000
+  ---------------------------------------------------------------
+  slack (MET)                                     170731520.000
+
+
+1

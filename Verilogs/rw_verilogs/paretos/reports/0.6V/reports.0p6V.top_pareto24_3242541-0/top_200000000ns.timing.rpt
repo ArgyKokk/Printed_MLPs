@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: S-2021.06-SP2
+Date   : Fri Dec  9 13:29:27 2022
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: inp[24] (input port clocked by clk)
+  Endpoint: out[0] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  inp[24] (in)                            0.000      0.000 r
+  U39/Y (NAND2X1)                      2162596.750
+                                                  2162596.750 f
+  U49/Y (NOR2X1)                       979518.250 3142115.000 r
+  U50/Y (NAND2X1)                      1494614.000
+                                                  4636729.000 f
+  U40/Y (AND2X1)                       3546305.000
+                                                  8183034.000 f
+  U41/Y (INVX1)                        -572161.000
+                                                  7610873.000 r
+  U51/Y (NAND2X1)                      2263784.000
+                                                  9874657.000 f
+  U52/Y (AND2X1)                       2990119.000
+                                                  12864776.000 f
+  out[0] (out)                            0.000   12864776.000 f
+  data arrival time                               12864776.000
+
+  clock clk (rise edge)                200000000.000
+                                                  200000000.000
+  clock network delay (ideal)             0.000   200000000.000
+  output external delay                   0.000   200000000.000
+  data required time                              200000000.000
+  -----------------------------------------------------------
+  data required time                              200000000.000
+  data arrival time                               -12864776.000
+  -----------------------------------------------------------
+  slack (MET)                                     187135232.000
+
+
+1
